@@ -12,6 +12,7 @@ public class RandomSelect {
     private int n;
     private CodeChooser codeChooser;
     private static final String shape = " -fx-border-radius: 40; -fx-background-radius: 40;";
+    private ArrayList<Integer> computerChoice = new ArrayList<Integer>();
 
     private int one;
     private int two;
@@ -44,7 +45,6 @@ public class RandomSelect {
 
     public ArrayList drawANumber() {
 
-        ArrayList<Integer> computerChoice = new ArrayList<Integer>();
 
         while (computerChoice.size() != 4) {
             n = generator.nextInt(6) + 1;

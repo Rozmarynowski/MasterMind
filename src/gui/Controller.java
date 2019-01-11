@@ -1,13 +1,19 @@
 package gui;
 
+import engine.CheckingClass;
 import engine.CodeChooser;
 import engine.Colors;
 import engine.RandomSelect;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class Controller {
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     @FXML
     private Button firstOne;
@@ -34,12 +40,14 @@ public class Controller {
     private int click2Code = 0;
     private int click3Code = 0;
     private int click4Code = 0;
-
+    private ArrayList<Integer> coderList= new ArrayList();
 
     CodeChooser codeChooser  = new CodeChooser();
     RandomSelect randomSelect;
+    CheckingClass checkingClass;
 
     public void colorCodeFour(javafx.event.ActionEvent actionEvent) {
+
 
         if(click4Code >=6){ click4Code = 0;}
 
@@ -52,9 +60,7 @@ public class Controller {
 
 
         codeFour.setStyle(shape +" -fx-background-color:"  + codeChooser.setColor(click4Code));
-
-
-
+        coderList.set(3,click4Code);
 
     }
 
@@ -69,6 +75,7 @@ public class Controller {
         }
 
         coderThree.setStyle(shape +" -fx-background-color:"  + codeChooser.setColor(click3Code));
+        coderList.set(2,click3Code);
 
     }
 
@@ -84,6 +91,7 @@ public class Controller {
         }
 
         coderTwo.setStyle(shape +" -fx-background-color:"  + codeChooser.setColor(click2Code));
+        coderList.set(1,click2Code);
 
 
     }
@@ -99,6 +107,8 @@ public class Controller {
         }
 
         coderOne.setStyle(shape +" -fx-background-color:"  + codeChooser.setColor(click1Code));
+        coderList.set(0,click1Code);
+
 
     }
 
@@ -109,7 +119,36 @@ public class Controller {
         randomSelect.drawANumber();
         randomSelect.setCompColor(firstOne,firstTwo,firstThree,firstFour);
 
+        turnOffButton(coderOne);
+        turnOffButton(coderTwo);
+        turnOffButton(coderThree);
+        turnOffButton(codeFour);
+        turnOffButton(playBtn);
 
+        System.out.println(coderList);
+        System.out.println(randomSelect.drawANumber());
+
+        checkingClass = new CheckingClass(coderList,randomSelect.drawANumber());
+
+
+
+
+    }
+
+    public void turnOffButton(Button button){
+
+        button.setDisable(true);
+
+
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+       for (int i = 0;i<4;i++){
+           coderList.add(0);
+           System.out.println(coderList);
+       }
 
     }
 }
