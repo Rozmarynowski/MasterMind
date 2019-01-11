@@ -2,22 +2,29 @@ package gui;
 
 import engine.CodeChooser;
 import engine.Colors;
+import engine.RandomSelect;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-
-import java.awt.event.ActionEvent;
 
 public class Controller {
 
     @FXML
+    private Button firstOne;
+    @FXML
+    private Button firstTwo;
+    @FXML
+    private Button firstThree;
+    @FXML
+    private Button firstFour;
+    @FXML
+    private Button playBtn;
+    @FXML
     private Button coderOne;
-
     @FXML
     private Button coderTwo;
-
     @FXML
     private Button coderThree;
-
     @FXML
     private Button codeFour;
 
@@ -30,6 +37,7 @@ public class Controller {
 
 
     CodeChooser codeChooser  = new CodeChooser();
+    RandomSelect randomSelect;
 
     public void colorCodeFour(javafx.event.ActionEvent actionEvent) {
 
@@ -38,7 +46,7 @@ public class Controller {
         click4Code++;
 
         while(click4Code == click1Code || click4Code == click2Code || click4Code == click3Code){
-            click4Code = searchClick(click4Code);
+            click4Code = CodeChooser.searchClick(click4Code);
 
         }
 
@@ -56,7 +64,7 @@ public class Controller {
 
             click3Code++;
         while(click3Code == click1Code || click3Code == click2Code || click3Code == click4Code){
-            click3Code = searchClick(click3Code);
+            click3Code = CodeChooser.searchClick(click3Code);
 
         }
 
@@ -71,7 +79,7 @@ public class Controller {
         click2Code++;
 
         while(click2Code == click1Code || click2Code == click3Code || click2Code == click4Code){
-            click2Code = searchClick(click2Code);
+            click2Code = CodeChooser.searchClick(click2Code);
 
         }
 
@@ -87,19 +95,21 @@ public class Controller {
         click1Code++;
 
         while(click1Code == click2Code || click1Code == click3Code || click1Code == click4Code){
-            click1Code = searchClick(click1Code);
+            click1Code = CodeChooser.searchClick(click1Code);
         }
 
         coderOne.setStyle(shape +" -fx-background-color:"  + codeChooser.setColor(click1Code));
 
     }
 
-    public int searchClick(int click){
 
-        if(click >=6){ click = 0;}
-        click++;
-        System.out.println(click);
+    public void pressPlatBtn(ActionEvent actionEvent) {
 
-        return click;
+        randomSelect = new RandomSelect(codeChooser);
+        randomSelect.drawANumber();
+        randomSelect.setCompColor(firstOne,firstTwo,firstThree,firstFour);
+
+
+
     }
 }

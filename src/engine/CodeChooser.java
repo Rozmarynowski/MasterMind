@@ -23,9 +23,16 @@ public class CodeChooser {
             color = colors.PINK.getColorName();
         }
 
-
-
             return color;
+    }
+
+    public static int searchClick(int clickCode){
+
+        if(clickCode >=6){ clickCode = 0;}
+        clickCode++;
+        System.out.println(clickCode);
+
+        return clickCode;
     }
 
 
