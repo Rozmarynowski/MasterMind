@@ -1,9 +1,6 @@
 package gui;
 
-import engine.CheckingClass;
-import engine.CodeChooser;
-import engine.Colors;
-import engine.RandomSelect;
+import engine.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,6 +8,7 @@ import javafx.scene.control.Button;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -51,6 +49,7 @@ public class Controller implements Initializable {
     private boolean pressStartBtn = true;
     private ArrayList<Integer> coderList= new ArrayList();
 
+    BaseOfResults baseOfResults = new BaseOfResults();
     CodeChooser codeChooser  = new CodeChooser();
     RandomSelect randomSelect;
     CheckingClass checkingClass;
@@ -162,10 +161,31 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ArrayList<int []> variation = new ArrayList<>();
 
        for (int i = 0;i<4;i++){
            coderList.add(0);
        }
+       variation = baseOfResults.getList();
+
+
+      //  System.out.println(Arrays.toString(variation.get(0)));
+        int a;
+        int b;
+        int c;
+        int d;
+
+      //  System.out.println(Arrays.toString(a));
+        for(int e = 0;e<360;e++) {
+            int[] tablica = (variation.get(e));
+            a = tablica[0];
+            b = tablica[1];
+            c = tablica[2];
+            d = tablica[3];
+
+
+            System.out.println(a + " " + b + " " + c + " " + d);
+        }
 
     }
 }
