@@ -4,57 +4,59 @@ import javafx.scene.control.Button;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class RandomSelect {
 
     private Random generator = new Random();
     private int n;
+
     private CodeChooser codeChooser;
-    private static final String shape = " -fx-border-radius: 40; -fx-background-radius: 40;";
+    private Capabilities capabilities;
+
+
     private ArrayList<Integer> computerChoice = new ArrayList<Integer>();
-
-    private int one;
-    private int two;
-    private int three;
-    private int four;
+    private ArrayList<int[]> variations = new ArrayList<>();
 
 
-    public RandomSelect(CodeChooser codeChooser) {
+
+    public RandomSelect(CodeChooser codeChooser, Capabilities capabilities) {
         this.codeChooser = codeChooser;
-    }
-
-    public void choosenNumbers(ArrayList<Integer> computerChoice) {
-
-        one = computerChoice.get(0);
-        two = computerChoice.get(1);
-        three = computerChoice.get(2);
-        four = computerChoice.get(3);
-
-    }
-
-
-    public void setCompColor(Button firstOne, Button firstTwo, Button firstThree, Button firstFour) {
-
-        firstOne.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(one));
-        firstTwo.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(two));
-        firstThree.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(three));
-        firstFour.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(four));
+        this.capabilities = capabilities;
     }
 
 
     public ArrayList drawANumber() {
+        int[] tab;
+        int i = 0;
 
+        clearComputerChoice();
+        variations = capabilities.getVariation();
 
-        while (computerChoice.size() != 4) {
-            n = generator.nextInt(6) + 1;
-            if (!computerChoice.contains(n)) {
-                computerChoice.add(n);
-            }
+        n = generator.nextInt(variations.size() - 1);
+
+        tab = variations.get(n);
+
+        while (i != 4) {
+            computerChoice.set(i, tab[i]);
+            i++;
         }
-        choosenNumbers(computerChoice);
+        variations.remove(n);
+
+        capabilities.setVariation(variations);
+
         return computerChoice;
     }
 
+    public ArrayList<Integer> getComputerChoice() {
+        return computerChoice;
+    }
 
+    private void clearComputerChoice() {
+
+        while (computerChoice.size() < 4) {
+            computerChoice.add(0);
+        }
+    }
 }

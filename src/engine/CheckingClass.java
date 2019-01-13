@@ -9,6 +9,8 @@ public class CheckingClass {
     private static final String shape = " -fx-border-radius: 40; -fx-background-radius: 40;";
     private ArrayList<Integer> gameCode = new ArrayList<>();
     private ArrayList<Integer> computerTry = new ArrayList<>();
+    ArrayList<Integer> key = new ArrayList<>();
+
     private int codedOne;
     private int codedTwo;
     private int codedThree;
@@ -17,16 +19,15 @@ public class CheckingClass {
     private int tryTwo;
     private int tryThree;
     private int tryFour;
+
     private int colorCounter = 0;
     private int positionCounter = 0;
     private Colors colors;
 
 
-    public CheckingClass(ArrayList<Integer> gameCode, ArrayList<Integer> computerTry, Colors colors) {
-        this.gameCode = gameCode;
-        this.computerTry = computerTry;
+    public CheckingClass(Colors colors) {
         this.colors = colors;
-        assignValues();
+        //  assignValues();
     }
 
     private void assignValues() {
@@ -62,20 +63,24 @@ public class CheckingClass {
 
     }
 
-    public void checkingColors() {
-
+    public int checkingColors(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
+        colorCounter = 0;
         for (int i = 0; i < 4; i++) {
 
             if (gameCode.contains(computerTry.get(i))) {
                 colorCounter++;
             }
-
         }
-        System.out.println("Same colors: " + colorCounter);
+
+      //  System.out.println("Same colors: " + colorCounter);
+        return colorCounter;
     }
 
 
-    public void checkingPositions() {
+    public int checkingPositions(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
+        positionCounter = 0;
 
         for (int i = 0; i < 4; i++) {
 
@@ -84,8 +89,8 @@ public class CheckingClass {
             }
 
         }
-        System.out.println("Same positions: " + positionCounter);
-
+       // System.out.println("Same positions: " + positionCounter);
+        return positionCounter;
     }
 
     public void ratingAnswer_color(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
@@ -114,7 +119,6 @@ public class CheckingClass {
 
         }
 
-
     }
 
     private void goodColorPainting(Button button) {
@@ -127,6 +131,44 @@ public class CheckingClass {
 
         button.setStyle(shape + " -fx-background-color:" + colors.BLACK.getColorName());
 
+    }
+
+    public int getColorCounter() {
+        return colorCounter;
+    }
+
+    public int getPositionCounter() {
+        return positionCounter;
+    }
+
+    public void setColorCounter(int colorCounter) {
+        this.colorCounter = colorCounter;
+    }
+
+    public void setPositionCounter(int positionCounter) {
+        this.positionCounter = positionCounter;
+    }
+
+    public ArrayList<Integer> getGameCode() {
+        return gameCode;
+    }
+
+    public void setGameCode(ArrayList<Integer> gameCode) {
+        this.gameCode = gameCode;
+    }
+
+    public void setComputerTry(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
+
+    }
+
+    public void checkingListener(){
+        checkingColors(computerTry);
+        checkingPositions(computerTry);
+    }
+
+    public ArrayList<Integer> getComputerTry() {
+        return computerTry;
     }
 
     public void ratingAnswer_position(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
@@ -158,4 +200,6 @@ public class CheckingClass {
 
 
     }
+
+
 }

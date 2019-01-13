@@ -30,7 +30,7 @@ public class CodeChooser {
 
         if(clickCode >=6){ clickCode = 0;}
         clickCode++;
-        System.out.println(clickCode);
+       // System.out.println(clickCode);
 
         return clickCode;
     }
