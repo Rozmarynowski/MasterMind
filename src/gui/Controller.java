@@ -1,9 +1,6 @@
 package gui;
 
-import engine.CheckingClass;
-import engine.CodeChooser;
-import engine.Colors;
-import engine.RandomSelect;
+import engine.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,10 +8,92 @@ import javafx.scene.control.Button;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class Controller implements Initializable {
 
+    @FXML
+    private Button fifthEvaluate1;
+    @FXML
+    private Button fifthEvaluate3;
+    @FXML
+    private Button fifthEvaluate2;
+    @FXML
+    private Button fifthEvaluate4;
+    @FXML
+    private Button sixthEvaluate1;
+    @FXML
+    private Button sixthEvaluate3;
+    @FXML
+    private Button sixthEvaluate2;
+    @FXML
+    private Button sixthEvaluate4;
+    @FXML
+    private Button fourthEvaluate1;
+    @FXML
+    private Button fourthEvaluate3;
+    @FXML
+    private Button fourthEvaluate2;
+    @FXML
+    private Button fourthEvaluate4;
+    @FXML
+    private Button thirdEvaluate1;
+    @FXML
+    private Button thirdEvaluate3;
+    @FXML
+    private Button thirdEvaluate2;
+    @FXML
+    private Button thirdEvaluate4;
+    @FXML
+    private Button secondEvaluate1;
+    @FXML
+    private Button secondEvaluate3;
+    @FXML
+    private Button secondEvaluate2;
+    @FXML
+    private Button secondEvaluate4;
+    @FXML
+    private Button fourthOne;
+    @FXML
+    private Button fourthTwo;
+    @FXML
+    private Button fourthThree;
+    @FXML
+    private Button fourthFour;
+    @FXML
+    private Button fifthOne;
+    @FXML
+    private Button fifthTwo;
+    @FXML
+    private Button fifthThree;
+    @FXML
+    private Button fifthFour;
+    @FXML
+    private Button sixthOne;
+    @FXML
+    private Button sixthTwo;
+    @FXML
+    private Button sixthThree;
+    @FXML
+    private Button sixthFour;
+    @FXML
+    private Button thirdOne;
+    @FXML
+    private Button thirdTwo;
+    @FXML
+    private Button thirdThree;
+    @FXML
+    private Button thirdFour;
+    @FXML
+    private Button secondOne;
+    @FXML
+    private Button secondTwo;
+    @FXML
+    private Button secondThree;
+    @FXML
+    private Button secondFour;
     @FXML
     private Button firstEvaluate1;
     @FXML
@@ -49,11 +128,17 @@ public class Controller implements Initializable {
     private int click3Code = 0;
     private int click4Code = 0;
     private boolean pressStartBtn = true;
-    private ArrayList<Integer> coderList= new ArrayList();
+    private ArrayList<Integer> coderList = new ArrayList();
+    private ArrayList<int[]> variation;
+    private int round = 0;
 
-    CodeChooser codeChooser  = new CodeChooser();
-    RandomSelect randomSelect;
-    CheckingClass checkingClass;
+    private BaseOfResults baseOfResults = new BaseOfResults();
+    private CodeChooser codeChooser = new CodeChooser();
+    private ColoringDots coloringDots;
+
+    private RandomSelect randomSelect;
+    private CheckingClass checkingClass;
+    private Capabilities capabilities;
 
     public void colorCodeFour(javafx.event.ActionEvent actionEvent) {
 
@@ -71,10 +156,12 @@ public class Controller implements Initializable {
 
 
             codeFour.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click4Code));
+            codeFour.setText("");
             coderList.set(3, click4Code);
 
         }
     }
+
     public void colorCodeThree(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -89,6 +176,7 @@ public class Controller implements Initializable {
             }
 
             coderThree.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click3Code));
+            coderThree.setText("");
             coderList.set(2, click3Code);
 
         }
@@ -108,6 +196,7 @@ public class Controller implements Initializable {
             }
 
             coderTwo.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click2Code));
+            coderTwo.setText("");
             coderList.set(1, click2Code);
 
         }
@@ -126,46 +215,102 @@ public class Controller implements Initializable {
             }
 
             coderOne.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click1Code));
+            coderOne.setText("");
             coderList.set(0, click1Code);
         }
 
     }
 
 
-    public void pressPlatBtn(ActionEvent actionEvent) {
+    public void pressPlatBtn(ActionEvent actionEvent) throws InterruptedException {
+        ArrayList<Integer> computerTry;
 
-        randomSelect = new RandomSelect(codeChooser);
-        randomSelect.drawANumber();
-        randomSelect.setCompColor(firstOne,firstTwo,firstThree,firstFour);
+        round++;
+        if(round == 1) {
+            randomSelect = new RandomSelect(codeChooser, capabilities);
+        }
+
+        computerTry = randomSelect.drawANumber();
         pressStartBtn = false;
+        System.out.println("Controller|ComputerTry: " + computerTry);
+        //turnOffButton(playBtn);
 
-        turnOffButton(playBtn);
+        System.out.println("Controller|Coded: " + coderList);
 
-        System.out.println("Coded: " + coderList);
-        System.out.println("Try: " + randomSelect.drawANumber());
+        coloringDots = new ColoringDots(codeChooser,checkingClass, computerTry);
 
-        checkingClass = new CheckingClass(coderList,randomSelect.drawANumber(),colors);
-        checkingClass.checkingColors();
-        checkingClass.ratingAnswer_color(firstEvaluate1,firstEvaluate2,firstEvaluate3,firstEvaluate4);
-        checkingClass.checkingPositions();
-        checkingClass.ratingAnswer_position(firstEvaluate1,firstEvaluate2,firstEvaluate3,firstEvaluate4);
 
+        checkingClass.setGameCode(coderList);
+        checkingClass.setComputerTry(computerTry);
+        checkingClass.checkingListener();
+
+        chooseLine(round);
+
+
+
+
+
+        capabilities.searchForMatching();
 
     }
 
-    public void turnOffButton(Button button){
+    public void turnOffButton(Button button) {
 
         button.setDisable(true);
 
 
     }
 
+    private void chooseLine(int round2) {
+
+
+        switch (round2) {
+            case 1:
+                coloringDots.setCompColor(firstOne, firstTwo, firstThree, firstFour);
+                coloringDots.ratingAnswer_color(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
+                coloringDots.ratingAnswer_position (firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
+                break;
+            case 2:
+                coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
+                coloringDots.ratingAnswer_color(secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
+                coloringDots.ratingAnswer_position (secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
+                break;
+            case 3:
+                coloringDots.setCompColor(thirdOne, thirdTwo, thirdThree, thirdFour);
+                coloringDots.ratingAnswer_color(thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
+                coloringDots.ratingAnswer_position (thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
+                break;
+            case 4:
+                coloringDots.setCompColor(fourthOne,fourthTwo,fourthThree,fourthFour);
+                coloringDots.ratingAnswer_color(fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
+                coloringDots.ratingAnswer_position (fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
+                break;
+            case 5:
+                coloringDots.setCompColor(fifthOne,fifthTwo,fifthThree,fifthFour);
+                coloringDots.ratingAnswer_color(fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
+                coloringDots.ratingAnswer_position (fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
+
+                break;
+            case 6:
+                coloringDots.setCompColor(sixthOne,sixthTwo,sixthThree,sixthFour);
+                coloringDots.ratingAnswer_color(sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
+                coloringDots.ratingAnswer_position (sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
+                break;
+        }
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        for (int i = 0; i < 4; i++) {
+            coderList.add(0);
+        }
+        variation = baseOfResults.getList();
 
-       for (int i = 0;i<4;i++){
-           coderList.add(0);
-       }
+        checkingClass = new CheckingClass(colors);
+        capabilities = new Capabilities(checkingClass, randomSelect, variation);
+
 
     }
 }
+

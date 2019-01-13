@@ -9,6 +9,8 @@ public class CheckingClass {
     private static final String shape = " -fx-border-radius: 40; -fx-background-radius: 40;";
     private ArrayList<Integer> gameCode = new ArrayList<>();
     private ArrayList<Integer> computerTry = new ArrayList<>();
+    ArrayList<Integer> key = new ArrayList<>();
+
     private int codedOne;
     private int codedTwo;
     private int codedThree;
@@ -17,16 +19,15 @@ public class CheckingClass {
     private int tryTwo;
     private int tryThree;
     private int tryFour;
+
     private int colorCounter = 0;
     private int positionCounter = 0;
     private Colors colors;
 
 
-    public CheckingClass(ArrayList<Integer> gameCode, ArrayList<Integer> computerTry, Colors colors) {
-        this.gameCode = gameCode;
-        this.computerTry = computerTry;
+    public CheckingClass(Colors colors) {
         this.colors = colors;
-        assignValues();
+        //  assignValues();
     }
 
     private void assignValues() {
@@ -62,20 +63,24 @@ public class CheckingClass {
 
     }
 
-    public void checkingColors() {
-
+    public int checkingColors(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
+        colorCounter = 0;
         for (int i = 0; i < 4; i++) {
 
             if (gameCode.contains(computerTry.get(i))) {
                 colorCounter++;
             }
-
         }
-        System.out.println("Same colors: " + colorCounter);
+
+      //  System.out.println("Same colors: " + colorCounter);
+        return colorCounter;
     }
 
 
-    public void checkingPositions() {
+    public int checkingPositions(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
+        positionCounter = 0;
 
         for (int i = 0; i < 4; i++) {
 
@@ -84,78 +89,53 @@ public class CheckingClass {
             }
 
         }
-        System.out.println("Same positions: " + positionCounter);
+       // System.out.println("Same positions: " + positionCounter);
+        return positionCounter;
+    }
+
+
+
+
+
+    public int getColorCounter() {
+        return colorCounter;
+    }
+
+    public int getPositionCounter() {
+        return positionCounter;
+    }
+
+    public void setColorCounter(int colorCounter) {
+        this.colorCounter = colorCounter;
+    }
+
+    public void setPositionCounter(int positionCounter) {
+        this.positionCounter = positionCounter;
+    }
+
+    public ArrayList<Integer> getGameCode() {
+        return gameCode;
+    }
+
+    public void setGameCode(ArrayList<Integer> gameCode) {
+        this.gameCode = gameCode;
+    }
+
+    public void setComputerTry(ArrayList<Integer> computerTry) {
+        this.computerTry = computerTry;
 
     }
 
-    public void ratingAnswer_color(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
-
-        switch (colorCounter) {
-
-            case 1:
-                goodColorPainting(firstEvaluate1);
-
-                break;
-            case 2:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                break;
-            case 3:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                goodColorPainting(firstEvaluate3);
-                break;
-            case 4:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                goodColorPainting(firstEvaluate3);
-                goodColorPainting(firstEvaluate4);
-                break;
-
-        }
-
-
+    public void checkingListener(){
+        checkingColors(computerTry);
+        checkingPositions(computerTry);
     }
 
-    private void goodColorPainting(Button button) {
-
-        button.setStyle(shape + " -fx-background-color:" + colors.WHITE.getColorName());
-
+    public ArrayList<Integer> getComputerTry() {
+        return computerTry;
     }
 
-    private void goodPositionPainting(Button button) {
-
-        button.setStyle(shape + " -fx-background-color:" + colors.BLACK.getColorName());
-
-    }
-
-    public void ratingAnswer_position(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
-
-        switch (positionCounter) {
-
-            case 1:
-                goodPositionPainting(firstEvaluate1);
-                break;
-            case 2:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                break;
-            case 3:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                goodPositionPainting(firstEvaluate3);
-
-                break;
-            case 4:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                goodPositionPainting(firstEvaluate3);
-                goodPositionPainting(firstEvaluate4);
-
-                break;
-
-        }
 
 
-    }
+
 }

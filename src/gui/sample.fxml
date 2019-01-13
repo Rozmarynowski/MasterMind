@@ -85,22 +85,22 @@
             </HBox>
             <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="secondOne" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="10.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="secondTwo" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="secondThree" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="secondFour" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
@@ -109,12 +109,12 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="secondEvaluate1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="secondEvaluate3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -126,71 +126,12 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="secondEvaluate2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                                 <VBox.margin>
-                                    <Insets left="8.0" top="8.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
-                     </children>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
-               <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="10.0" top="13.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="20.0" top="13.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="20.0" top="13.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                     <HBox.margin>
-                        <Insets left="20.0" top="13.0" />
-                     </HBox.margin>
-                  </Button>
-                  <HBox prefHeight="73.0" prefWidth="80.0" style="-fx-border-color: #a57d1f;">
-                     <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                                 <VBox.margin>
-                                    <Insets left="8.0" top="8.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                                 <VBox.margin>
-                                    <Insets left="8.0" top="8.0" />
-                                 </VBox.margin>
-                              </Button>
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
-                                 <VBox.margin>
-                                    <Insets left="8.0" top="8.0" />
-                                 </VBox.margin>
-                              </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="secondEvaluate4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -206,22 +147,22 @@
             </HBox>
             <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="thirdOne" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="10.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="thirdTwo" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="thirdThree" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="thirdFour" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
@@ -230,12 +171,12 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="thirdEvaluate1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="thirdEvaluate3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -244,12 +185,12 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="thirdEvaluate2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="thirdEvaluate4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -265,22 +206,22 @@
             </HBox>
             <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fourthOne" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="10.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fourthTwo" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fourthThree" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fourthFour" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
@@ -289,12 +230,12 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fourthEvaluate1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fourthEvaluate3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -303,12 +244,12 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fourthEvaluate2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fourthEvaluate4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -324,22 +265,22 @@
             </HBox>
             <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fifthOne" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="10.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fifthTwo" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fifthThree" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                  <Button fx:id="fifthFour" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                      <HBox.margin>
                         <Insets left="20.0" top="13.0" />
                      </HBox.margin>
@@ -348,12 +289,12 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fifthEvaluate1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fifthEvaluate3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -362,12 +303,71 @@
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fifthEvaluate2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
                               </Button>
-                              <Button alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                              <Button fx:id="fifthEvaluate4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
+               <children>
+                  <Button fx:id="sixthOne" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="10.0" top="13.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="sixthTwo" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="20.0" top="13.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="sixthThree" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="20.0" top="13.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="sixthFour" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="20.0" top="13.0" />
+                     </HBox.margin>
+                  </Button>
+                  <HBox prefHeight="73.0" prefWidth="80.0" style="-fx-border-color: #a57d1f;">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="sixthEvaluate1" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="sixthEvaluate3" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Button fx:id="sixthEvaluate2" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+                                 <VBox.margin>
+                                    <Insets left="8.0" top="8.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="sixthEvaluate4" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="25.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
                                  <VBox.margin>
                                     <Insets left="8.0" top="8.0" />
                                  </VBox.margin>
@@ -385,22 +385,22 @@
       </VBox>
       <HBox layoutY="83.0" prefHeight="83.0" prefWidth="360.0" style="-fx-background-color: #ffce5b; -fx-border-color: #a57d1f;">
          <children>
-            <Button fx:id="coderOne" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeOne" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+            <Button fx:id="coderOne" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeOne" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="13.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="coderTwo" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeTwo" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+            <Button fx:id="coderTwo" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeTwo" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="13.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="coderThree" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeThree" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+            <Button fx:id="coderThree" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeThree" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="13.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="codeFour" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeFour" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" textAlignment="CENTER">
+            <Button fx:id="codeFour" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeFour" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="13.0" />
                </HBox.margin>

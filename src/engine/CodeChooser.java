@@ -21,8 +21,11 @@ public class CodeChooser {
             color = colors.PURPLE.getColorName();
         }else if (click ==6) {
             color = colors.PINK.getColorName();
+        }else if (click ==7) {
+        color = colors.WHITE.getColorName();
+        }else if (click ==8) {
+            color = colors.BLACK.getColorName();
         }
-
             return color;
     }
 
@@ -30,8 +33,6 @@ public class CodeChooser {
 
         if(clickCode >=6){ clickCode = 0;}
         clickCode++;
-        System.out.println(clickCode);
-
         return clickCode;
     }
 
