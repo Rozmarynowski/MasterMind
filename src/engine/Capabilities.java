@@ -52,12 +52,10 @@ public class Capabilities {
                     variation.remove(i);
             }
 
-
-
-
     }
         for(int a = 0; a<variation.size();a++)
             System.out.println("NOWA LISTA " + Arrays.toString(variation.get(a)));
+
 
         System.out.println("ROZMIAR WAR PO " + variation.size());
 
@@ -71,8 +69,10 @@ public class Capabilities {
             possibilityCode.add(0);
         }
 
-
-
     }
+
+
+
+
 
 }

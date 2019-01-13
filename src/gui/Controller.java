@@ -15,6 +15,70 @@ import java.util.concurrent.TimeUnit;
 public class Controller implements Initializable {
 
     @FXML
+    private Button fifthEvaluate1;
+    @FXML
+    private Button fifthEvaluate3;
+    @FXML
+    private Button fifthEvaluate2;
+    @FXML
+    private Button fifthEvaluate4;
+    @FXML
+    private Button sixthEvaluate1;
+    @FXML
+    private Button sixthEvaluate3;
+    @FXML
+    private Button sixthEvaluate2;
+    @FXML
+    private Button sixthEvaluate4;
+    @FXML
+    private Button fourthEvaluate1;
+    @FXML
+    private Button fourthEvaluate3;
+    @FXML
+    private Button fourthEvaluate2;
+    @FXML
+    private Button fourthEvaluate4;
+    @FXML
+    private Button thirdEvaluate1;
+    @FXML
+    private Button thirdEvaluate3;
+    @FXML
+    private Button thirdEvaluate2;
+    @FXML
+    private Button thirdEvaluate4;
+    @FXML
+    private Button secondEvaluate1;
+    @FXML
+    private Button secondEvaluate3;
+    @FXML
+    private Button secondEvaluate2;
+    @FXML
+    private Button secondEvaluate4;
+    @FXML
+    private Button fourthOne;
+    @FXML
+    private Button fourthTwo;
+    @FXML
+    private Button fourthThree;
+    @FXML
+    private Button fourthFour;
+    @FXML
+    private Button fifthOne;
+    @FXML
+    private Button fifthTwo;
+    @FXML
+    private Button fifthThree;
+    @FXML
+    private Button fifthFour;
+    @FXML
+    private Button sixthOne;
+    @FXML
+    private Button sixthTwo;
+    @FXML
+    private Button sixthThree;
+    @FXML
+    private Button sixthFour;
+    @FXML
     private Button thirdOne;
     @FXML
     private Button thirdTwo;
@@ -159,11 +223,13 @@ public class Controller implements Initializable {
 
 
     public void pressPlatBtn(ActionEvent actionEvent) throws InterruptedException {
-        round++;
         ArrayList<Integer> computerTry;
 
+        round++;
+        if(round == 1) {
+            randomSelect = new RandomSelect(codeChooser, capabilities);
+        }
 
-        randomSelect = new RandomSelect(codeChooser, capabilities);
         computerTry = randomSelect.drawANumber();
         pressStartBtn = false;
         System.out.println("Controller|ComputerTry: " + computerTry);
@@ -171,14 +237,17 @@ public class Controller implements Initializable {
 
         System.out.println("Controller|Coded: " + coderList);
 
-        coloringDots = new ColoringDots(codeChooser, computerTry);
-        chooseLine(round);
+        coloringDots = new ColoringDots(codeChooser,checkingClass, computerTry);
+
 
         checkingClass.setGameCode(coderList);
         checkingClass.setComputerTry(computerTry);
         checkingClass.checkingListener();
-        checkingClass.ratingAnswer_color(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
-        checkingClass.ratingAnswer_position(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
+
+        chooseLine(round);
+
+
+
 
 
         capabilities.searchForMatching();
@@ -198,21 +267,34 @@ public class Controller implements Initializable {
         switch (round2) {
             case 1:
                 coloringDots.setCompColor(firstOne, firstTwo, firstThree, firstFour);
+                coloringDots.ratingAnswer_color(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
+                coloringDots.ratingAnswer_position (firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
                 break;
             case 2:
                 coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
+                coloringDots.ratingAnswer_color(secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
+                coloringDots.ratingAnswer_position (secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
                 break;
             case 3:
                 coloringDots.setCompColor(thirdOne, thirdTwo, thirdThree, thirdFour);
+                coloringDots.ratingAnswer_color(thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
+                coloringDots.ratingAnswer_position (thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
                 break;
             case 4:
-              //  coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
+                coloringDots.setCompColor(fourthOne,fourthTwo,fourthThree,fourthFour);
+                coloringDots.ratingAnswer_color(fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
+                coloringDots.ratingAnswer_position (fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
                 break;
             case 5:
-               // coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
+                coloringDots.setCompColor(fifthOne,fifthTwo,fifthThree,fifthFour);
+                coloringDots.ratingAnswer_color(fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
+                coloringDots.ratingAnswer_position (fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
+
                 break;
             case 6:
-              //  coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
+                coloringDots.setCompColor(sixthOne,sixthTwo,sixthThree,sixthFour);
+                coloringDots.ratingAnswer_color(sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
+                coloringDots.ratingAnswer_position (sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
                 break;
         }
 

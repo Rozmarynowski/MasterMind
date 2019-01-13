@@ -93,45 +93,9 @@ public class CheckingClass {
         return positionCounter;
     }
 
-    public void ratingAnswer_color(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
 
-        switch (colorCounter) {
 
-            case 1:
-                goodColorPainting(firstEvaluate1);
 
-                break;
-            case 2:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                break;
-            case 3:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                goodColorPainting(firstEvaluate3);
-                break;
-            case 4:
-                goodColorPainting(firstEvaluate1);
-                goodColorPainting(firstEvaluate2);
-                goodColorPainting(firstEvaluate3);
-                goodColorPainting(firstEvaluate4);
-                break;
-
-        }
-
-    }
-
-    private void goodColorPainting(Button button) {
-
-        button.setStyle(shape + " -fx-background-color:" + colors.WHITE.getColorName());
-
-    }
-
-    private void goodPositionPainting(Button button) {
-
-        button.setStyle(shape + " -fx-background-color:" + colors.BLACK.getColorName());
-
-    }
 
     public int getColorCounter() {
         return colorCounter;
@@ -171,35 +135,7 @@ public class CheckingClass {
         return computerTry;
     }
 
-    public void ratingAnswer_position(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
 
-        switch (positionCounter) {
-
-            case 1:
-                goodPositionPainting(firstEvaluate1);
-                break;
-            case 2:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                break;
-            case 3:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                goodPositionPainting(firstEvaluate3);
-
-                break;
-            case 4:
-                goodPositionPainting(firstEvaluate1);
-                goodPositionPainting(firstEvaluate2);
-                goodPositionPainting(firstEvaluate3);
-                goodPositionPainting(firstEvaluate4);
-
-                break;
-
-        }
-
-
-    }
 
 
 }

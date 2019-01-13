@@ -1,10 +1,6 @@
 package engine;
 
-import javafx.scene.control.Button;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class RandomSelect {
@@ -15,17 +11,13 @@ public class RandomSelect {
     private CodeChooser codeChooser;
     private Capabilities capabilities;
 
-
     private ArrayList<Integer> computerChoice = new ArrayList<Integer>();
     private ArrayList<int[]> variations = new ArrayList<>();
-
-
 
     public RandomSelect(CodeChooser codeChooser, Capabilities capabilities) {
         this.codeChooser = codeChooser;
         this.capabilities = capabilities;
     }
-
 
     public ArrayList drawANumber() {
         int[] tab;
