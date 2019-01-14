@@ -15,7 +15,7 @@ public class ColoringDots {
     private int four;
     private int colorCounter;
     private int positionCounter;
-
+    private Button button;
     private CheckingClass checkingClass;
     private CodeChooser codeChooser;
     private ArrayList<Integer> computerTry;
@@ -35,7 +35,6 @@ public class ColoringDots {
         four = computerTry.get(3);
 
     }
-
 
     public void setCompColor(Button firstOne, Button firstTwo, Button firstThree, Button firstFour) {
 
@@ -83,7 +82,6 @@ public class ColoringDots {
                 goodColorPainting(firstEvaluate3);
                 goodColorPainting(firstEvaluate4);
                 break;
-
         }
 
     }
@@ -114,11 +112,6 @@ public class ColoringDots {
                 goodPositionPainting(firstEvaluate4);
 
                 break;
-
         }
-
-
     }
-
-
-}
+   }

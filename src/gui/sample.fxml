@@ -387,22 +387,22 @@
          <children>
             <Button fx:id="coderOne" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeOne" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets left="20.0" top="13.0" />
+                  <Insets left="20.0" top="8.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="coderTwo" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeTwo" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets left="20.0" top="13.0" />
+                  <Insets left="20.0" top="8.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="coderThree" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeThree" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets left="20.0" top="13.0" />
+                  <Insets left="20.0" top="8.0" />
                </HBox.margin>
             </Button>
             <Button fx:id="codeFour" alignment="CENTER" mnemonicParsing="false" onAction="#colorCodeFour" prefHeight="50.0" prefWidth="50.0" style="-fx-border-radius: 40; -fx-background-radius: 40;" text="click!!!" textAlignment="CENTER">
                <HBox.margin>
-                  <Insets left="20.0" top="13.0" />
+                  <Insets left="20.0" top="8.0" />
                </HBox.margin>
             </Button>
          </children>
@@ -412,11 +412,11 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="158.0" prefHeight="24.0" prefWidth="360.0" style="-fx-background-color: #efb93b; -fx-border-color: #a57d1f;">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="151.0" prefHeight="32.0" prefWidth="360.0" style="-fx-background-color: #efb93b; -fx-border-color: #a57d1f;">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="playBtn" layoutX="80.0" layoutY="158.0" mnemonicParsing="false" onAction="#pressPlatBtn" prefWidth="200.0" text="Computer Play" />
+      <Button fx:id="playBtn" layoutX="80.0" layoutY="154.0" mnemonicParsing="false" onAction="#pressPlatBtn" prefWidth="200.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" text="Computer Play" />
    </children>
 </AnchorPane>
