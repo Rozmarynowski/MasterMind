@@ -7,8 +7,7 @@ public class Capabilities {
     private CheckingClass checkingClass;
     private ArrayList<int[]> variation;
     private   ArrayList<Integer> possibilityCode = new ArrayList<>();
-    private ArrayList<int[]> code = new ArrayList<int[]>();
-    private ArrayList<int[]> newList = new ArrayList<int[]>();
+    private ArrayList<int[]> newList = new ArrayList<>();
 
 
     public Capabilities(CheckingClass checkingClass, ArrayList<int[]> variation) {
@@ -24,6 +23,9 @@ public class Capabilities {
         return variation;
     }
 
+    /**
+     *The method searches the list of all items and searches for which the key meets
+     */
 
     public void searchForMatching() {
 

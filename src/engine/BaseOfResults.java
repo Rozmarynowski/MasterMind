@@ -3,11 +3,18 @@ package engine;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+/**
+ *The class creates a list of 360 four-element tables from numbers 1,2,3,4,5,6.
+ */
 public class BaseOfResults {
 
     public static HashSet<int []> mainHashSet = new HashSet<>();
     ArrayList<int[]> variation = new ArrayList<>();
 
+    /**
+     * The method creates arraylist of 360 four-element tables from numbers 1,2,3,4,5,6.
+     * @return arraylisto of 360 tables
+     */
     public ArrayList getList() {
 
         int [] table = {1,2,3,4,5,6};
@@ -29,14 +36,9 @@ public class BaseOfResults {
         }
 
         mainHashSet.forEach(item->{
-            //  System.out.format("%d,%d,%d,%d \n",item[0],item[1],item[2],item[3]);
             int[] a = {item[0],item[1],item[2],item[3]};
             variation.add(a);
         });
-       // System.out.println(Arrays.toString(variation.get(0)));
-
-       // System.out.println(mainHashSet.size());
-
 
     return variation;
 

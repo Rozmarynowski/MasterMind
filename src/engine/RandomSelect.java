@@ -17,6 +17,10 @@ public class RandomSelect {
         this.capabilities = capabilities;
     }
 
+    /**
+     * The method draw a table from 360 elements array. Returns and deletes it from array list.
+     * @return computerChoice - one table with four elements.
+     */
     public ArrayList drawANumber() {
         int[] tab;
         int i = 0;
@@ -52,9 +56,14 @@ public class RandomSelect {
             return computerChoice;
     }
 
+    /**
+     * The method returns last item drawn by computer.
+     * @return computerChoice - one table with four elements.
+     */
     public ArrayList<Integer> getComputerChoice() {
         return computerChoice;
     }
+
 
     private void clearComputerChoice() {
 

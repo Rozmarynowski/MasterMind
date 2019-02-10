@@ -139,6 +139,10 @@ public class Controller implements Initializable {
     private CheckingClass checkingClass;
     private Capabilities capabilities;
 
+    /**
+     * The method responsible for selecting the code for fourth of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeFour(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -161,7 +165,10 @@ public class Controller implements Initializable {
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for third of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeThree(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -182,7 +189,10 @@ public class Controller implements Initializable {
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for second of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeTwo(javafx.event.ActionEvent actionEvent) {
         if (pressStartBtn) {
             if (click2Code >= 6) {
@@ -203,7 +213,10 @@ public class Controller implements Initializable {
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for first of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeOne(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -222,6 +235,11 @@ public class Controller implements Initializable {
             checkCode();
         }
     }
+
+    /**
+     * The method performs computer movement by player's clicks
+     * @param actionEvent
+     */
     public void pressPlatBtn(ActionEvent actionEvent) {
         ArrayList computerTry;
 
@@ -250,10 +268,15 @@ public class Controller implements Initializable {
 
     }
 
-    public void turnOffButton(Button button) {
+
+    private void turnOffButton(Button button) {
         button.setDisable(true);
     }
 
+    /**
+     * The method selects a coloring line depending on the round
+     * @param round
+     */
     private void chooseLine(int round) {
 
 
@@ -293,7 +316,7 @@ public class Controller implements Initializable {
 
     }
 
-    public void checkCode() {
+    private void checkCode() {
         if (click1Code != 0 && click2Code != 0 && click3Code != 0 && click4Code != 0) {
             playBtn.setDisable(false);
         }

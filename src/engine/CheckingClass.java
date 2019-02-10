@@ -16,6 +16,11 @@ public class CheckingClass {
         this.colors = colors;
     }
 
+    /**
+     * The method checks if the colors of the player's code match the computer's code
+     * @param computerTry - one table with four elements.
+     * @return colorCounter - number of matching numbers in the array and key.
+     */
     public int checkingColors(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
         colorCounter = 0;
@@ -29,6 +34,11 @@ public class CheckingClass {
         return colorCounter;
     }
 
+    /**
+     * The method checks if the position of the player's code match the computer's code
+     * @param computerTry one table with four elements.
+     * @return - number of matching numbers in the array and key.
+     */
 
     public int checkingPositions(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
@@ -43,18 +53,32 @@ public class CheckingClass {
         return positionCounter;
     }
 
+    /**
+     * The method returns last number of matching colors.
+     * @return colorCounter - number of matching numbers in the array and key.
+     */
     public int getColorCounter() {
         return colorCounter;
     }
-
+    /**
+     * The method returns last number of matching positions.
+     * @return positionCounter - number of matching numbers in the array and key.
+     */
     public int getPositionCounter() {
         return positionCounter;
     }
 
+    /**
+     * The method sets gameCode coded by player.
+     * @param gameCode - lists of numbers coded by player.
+     */
     public void setGameCode(ArrayList<Integer> gameCode) {
         this.gameCode = gameCode;
     }
-
+    /**
+     * The method sets computerTry drawn by computer.
+     * @param computerTry - lists of numbers drawn by computer.
+     */
     public void setComputerTry(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
     }
@@ -64,6 +88,10 @@ public class CheckingClass {
         checkingPositions(computerTry);
     }
 
+    /**
+     *
+     * @return computerTry - lists of last numbers drawn by computer.
+     */
     public ArrayList<Integer> getComputerTry() {
         return computerTry;
     }
