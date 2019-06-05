@@ -11,10 +11,17 @@ public enum Colors {
         this.colorName = colorName;
     }
 
+    /**
+     * The method returns the number corresponding to the color.
+     * @return colorNumber.
+     */
     public int getColorNumber() {
         return colorNumber;
     }
-
+    /**
+     * The method returns the color corresponding to the number.
+     * @return colorName.
+     */
     public String getColorName() {
         return colorName;
     }

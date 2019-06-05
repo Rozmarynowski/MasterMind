@@ -128,8 +128,7 @@ public class Controller implements Initializable {
     private int click3Code = 0;
     private int click4Code = 0;
     private boolean pressStartBtn = true;
-    private ArrayList<Integer> coderList = new ArrayList();
-    private ArrayList<int[]> variation;
+    private ArrayList coderList = new ArrayList();
     private int round = 0;
 
     private BaseOfResults baseOfResults = new BaseOfResults();
@@ -140,6 +139,10 @@ public class Controller implements Initializable {
     private CheckingClass checkingClass;
     private Capabilities capabilities;
 
+    /**
+     * The method responsible for selecting the code for fourth of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeFour(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -158,10 +161,14 @@ public class Controller implements Initializable {
             codeFour.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click4Code));
             codeFour.setText("");
             coderList.set(3, click4Code);
+            checkCode();
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for third of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeThree(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -178,10 +185,14 @@ public class Controller implements Initializable {
             coderThree.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click3Code));
             coderThree.setText("");
             coderList.set(2, click3Code);
+            checkCode();
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for second of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeTwo(javafx.event.ActionEvent actionEvent) {
         if (pressStartBtn) {
             if (click2Code >= 6) {
@@ -198,10 +209,14 @@ public class Controller implements Initializable {
             coderTwo.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click2Code));
             coderTwo.setText("");
             coderList.set(1, click2Code);
+            checkCode();
 
         }
     }
-
+    /**
+     * The method responsible for selecting the code for first of four items by clicking by player.
+     * @param actionEvent
+     */
     public void colorCodeOne(javafx.event.ActionEvent actionEvent) {
 
         if (pressStartBtn) {
@@ -217,85 +232,93 @@ public class Controller implements Initializable {
             coderOne.setStyle(shape + " -fx-background-color:" + codeChooser.setColor(click1Code));
             coderOne.setText("");
             coderList.set(0, click1Code);
+            checkCode();
         }
-
     }
 
-
-    public void pressPlatBtn(ActionEvent actionEvent) throws InterruptedException {
-        ArrayList<Integer> computerTry;
+    /**
+     * The method performs computer movement by player's clicks
+     * @param actionEvent
+     */
+    public void pressPlatBtn(ActionEvent actionEvent) {
+        ArrayList computerTry;
 
         round++;
-        if(round == 1) {
-            randomSelect = new RandomSelect(codeChooser, capabilities);
+
+        if (round == 1) {
+            randomSelect = new RandomSelect(capabilities);
         }
 
         computerTry = randomSelect.drawANumber();
-        pressStartBtn = false;
+
         System.out.println("Controller|ComputerTry: " + computerTry);
-        //turnOffButton(playBtn);
 
         System.out.println("Controller|Coded: " + coderList);
 
-        coloringDots = new ColoringDots(codeChooser,checkingClass, computerTry);
-
+        coloringDots = new ColoringDots(codeChooser, checkingClass, computerTry);
+        if (computerTry.equals(coderList)) {
+            turnOffButton(playBtn);
+        }
 
         checkingClass.setGameCode(coderList);
         checkingClass.setComputerTry(computerTry);
         checkingClass.checkingListener();
-
         chooseLine(round);
-
-
-
-
-
         capabilities.searchForMatching();
 
     }
 
-    public void turnOffButton(Button button) {
 
+    private void turnOffButton(Button button) {
         button.setDisable(true);
-
-
     }
 
-    private void chooseLine(int round2) {
+    /**
+     * The method selects a coloring line depending on the round
+     * @param round
+     */
+    private void chooseLine(int round) {
 
 
-        switch (round2) {
+        switch (round) {
             case 1:
                 coloringDots.setCompColor(firstOne, firstTwo, firstThree, firstFour);
                 coloringDots.ratingAnswer_color(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
-                coloringDots.ratingAnswer_position (firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
+                coloringDots.ratingAnswer_position(firstEvaluate1, firstEvaluate2, firstEvaluate3, firstEvaluate4);
                 break;
             case 2:
                 coloringDots.setCompColor(secondOne, secondTwo, secondThree, secondFour);
-                coloringDots.ratingAnswer_color(secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
-                coloringDots.ratingAnswer_position (secondEvaluate1,secondEvaluate2,secondEvaluate3,secondEvaluate4);
+                coloringDots.ratingAnswer_color(secondEvaluate1, secondEvaluate2, secondEvaluate3, secondEvaluate4);
+                coloringDots.ratingAnswer_position(secondEvaluate1, secondEvaluate2, secondEvaluate3, secondEvaluate4);
                 break;
             case 3:
                 coloringDots.setCompColor(thirdOne, thirdTwo, thirdThree, thirdFour);
-                coloringDots.ratingAnswer_color(thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
-                coloringDots.ratingAnswer_position (thirdEvaluate1,thirdEvaluate2,thirdEvaluate3,thirdEvaluate4);
+                coloringDots.ratingAnswer_color(thirdEvaluate1, thirdEvaluate2, thirdEvaluate3, thirdEvaluate4);
+                coloringDots.ratingAnswer_position(thirdEvaluate1, thirdEvaluate2, thirdEvaluate3, thirdEvaluate4);
                 break;
             case 4:
-                coloringDots.setCompColor(fourthOne,fourthTwo,fourthThree,fourthFour);
-                coloringDots.ratingAnswer_color(fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
-                coloringDots.ratingAnswer_position (fourthEvaluate1,fourthEvaluate2,fourthEvaluate3,fourthEvaluate4);
+                coloringDots.setCompColor(fourthOne, fourthTwo, fourthThree, fourthFour);
+                coloringDots.ratingAnswer_color(fourthEvaluate1, fourthEvaluate2, fourthEvaluate3, fourthEvaluate4);
+                coloringDots.ratingAnswer_position(fourthEvaluate1, fourthEvaluate2, fourthEvaluate3, fourthEvaluate4);
                 break;
             case 5:
-                coloringDots.setCompColor(fifthOne,fifthTwo,fifthThree,fifthFour);
-                coloringDots.ratingAnswer_color(fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
-                coloringDots.ratingAnswer_position (fifthEvaluate1,fifthEvaluate2,fifthEvaluate3,firstEvaluate4);
+                coloringDots.setCompColor(fifthOne, fifthTwo, fifthThree, fifthFour);
+                coloringDots.ratingAnswer_color(fifthEvaluate1, fifthEvaluate2, fifthEvaluate3, fifthEvaluate4);
+                coloringDots.ratingAnswer_position(fifthEvaluate1, fifthEvaluate2, fifthEvaluate3, fifthEvaluate4);
 
                 break;
             case 6:
-                coloringDots.setCompColor(sixthOne,sixthTwo,sixthThree,sixthFour);
-                coloringDots.ratingAnswer_color(sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
-                coloringDots.ratingAnswer_position (sixthEvaluate1,sixthEvaluate2,sixthEvaluate3,sixthEvaluate4);
+                coloringDots.setCompColor(sixthOne, sixthTwo, sixthThree, sixthFour);
+                coloringDots.ratingAnswer_color(sixthEvaluate1, sixthEvaluate2, sixthEvaluate3, sixthEvaluate4);
+                coloringDots.ratingAnswer_position(sixthEvaluate1, sixthEvaluate2, sixthEvaluate3, sixthEvaluate4);
                 break;
+        }
+
+    }
+
+    private void checkCode() {
+        if (click1Code != 0 && click2Code != 0 && click3Code != 0 && click4Code != 0) {
+            playBtn.setDisable(false);
         }
 
     }
@@ -305,12 +328,12 @@ public class Controller implements Initializable {
         for (int i = 0; i < 4; i++) {
             coderList.add(0);
         }
-        variation = baseOfResults.getList();
+        ArrayList variation = baseOfResults.getList();
 
         checkingClass = new CheckingClass(colors);
-        capabilities = new Capabilities(checkingClass, randomSelect, variation);
-
-
+        capabilities = new Capabilities(checkingClass, variation);
+        turnOffButton(playBtn);
     }
 }
+
 

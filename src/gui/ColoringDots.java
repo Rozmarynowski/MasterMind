@@ -15,7 +15,7 @@ public class ColoringDots {
     private int four;
     private int colorCounter;
     private int positionCounter;
-
+    private Button button;
     private CheckingClass checkingClass;
     private CodeChooser codeChooser;
     private ArrayList<Integer> computerTry;
@@ -36,7 +36,13 @@ public class ColoringDots {
 
     }
 
-
+    /**
+     * The Method colors buttons clicked by player to choose a code.
+     * @param firstOne
+     * @param firstTwo
+     * @param firstThree
+     * @param firstFour
+     */
     public void setCompColor(Button firstOne, Button firstTwo, Button firstThree, Button firstFour) {
 
         choosenNumbers();
@@ -58,6 +64,13 @@ public class ColoringDots {
 
     }
 
+    /**
+     * The Method colored tags on corresponding colors to the drawn numbers by computer.
+     * @param firstEvaluate1
+     * @param firstEvaluate2
+     * @param firstEvaluate3
+     * @param firstEvaluate4
+     */
     public void ratingAnswer_color(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
 
         colorCounter = checkingClass.getColorCounter();
@@ -83,11 +96,17 @@ public class ColoringDots {
                 goodColorPainting(firstEvaluate3);
                 goodColorPainting(firstEvaluate4);
                 break;
-
         }
 
     }
 
+    /**
+     * The Method colored tags on corresponding positions to the drawn numbers by computer.
+     * @param firstEvaluate1
+     * @param firstEvaluate2
+     * @param firstEvaluate3
+     * @param firstEvaluate4
+     */
     public void ratingAnswer_position(Button firstEvaluate1, Button firstEvaluate2, Button firstEvaluate3, Button firstEvaluate4) {
 
         positionCounter = checkingClass.getPositionCounter();
@@ -114,11 +133,6 @@ public class ColoringDots {
                 goodPositionPainting(firstEvaluate4);
 
                 break;
-
         }
-
-
     }
-
-
-}
+   }

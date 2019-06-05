@@ -8,42 +8,62 @@ public class RandomSelect {
     private Random generator = new Random();
     private int n;
 
-    private CodeChooser codeChooser;
     private Capabilities capabilities;
 
-    private ArrayList<Integer> computerChoice = new ArrayList<Integer>();
+    private ArrayList<Integer> computerChoice = new ArrayList<>();
     private ArrayList<int[]> variations = new ArrayList<>();
 
-    public RandomSelect(CodeChooser codeChooser, Capabilities capabilities) {
-        this.codeChooser = codeChooser;
+    public RandomSelect(Capabilities capabilities) {
         this.capabilities = capabilities;
     }
 
+    /**
+     * The method draw a table from 360 elements array. Returns and deletes it from array list.
+     * @return computerChoice - one table with four elements.
+     */
     public ArrayList drawANumber() {
         int[] tab;
         int i = 0;
 
         clearComputerChoice();
         variations = capabilities.getVariation();
+        try {
 
-        n = generator.nextInt(variations.size() - 1);
+        n = generator.nextInt(variations.size() + 1);
+        }catch (ArrayIndexOutOfBoundsException ex){
+        System.out.println("WYJĄTEK 1");
+        n=1;
+        }
 
-        tab = variations.get(n);
+        try{
+            tab = variations.get(n-1);
+        }catch (ArrayIndexOutOfBoundsException ex2){
+            System.out.println("WYJĄTEK 2");
+            n=1;
+            tab = variations.get(n-1);
+        }
+
+
 
         while (i != 4) {
             computerChoice.set(i, tab[i]);
             i++;
         }
-        variations.remove(n);
 
+        variations.remove(n - 1);
         capabilities.setVariation(variations);
 
-        return computerChoice;
+            return computerChoice;
     }
 
+    /**
+     * The method returns last item drawn by computer.
+     * @return computerChoice - one table with four elements.
+     */
     public ArrayList<Integer> getComputerChoice() {
         return computerChoice;
     }
+
 
     private void clearComputerChoice() {
 

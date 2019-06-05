@@ -1,68 +1,26 @@
 package engine;
 
-import javafx.scene.control.Button;
 
 import java.util.ArrayList;
 
 public class CheckingClass {
 
-    private static final String shape = " -fx-border-radius: 40; -fx-background-radius: 40;";
     private ArrayList<Integer> gameCode = new ArrayList<>();
     private ArrayList<Integer> computerTry = new ArrayList<>();
-    ArrayList<Integer> key = new ArrayList<>();
-
-    private int codedOne;
-    private int codedTwo;
-    private int codedThree;
-    private int codedFour;
-    private int tryOne;
-    private int tryTwo;
-    private int tryThree;
-    private int tryFour;
 
     private int colorCounter = 0;
     private int positionCounter = 0;
     private Colors colors;
 
-
     public CheckingClass(Colors colors) {
         this.colors = colors;
-        //  assignValues();
     }
 
-    private void assignValues() {
-
-        codedOne = unpackGameCode(0);
-        codedTwo = unpackGameCode(1);
-        codedThree = unpackGameCode(2);
-        codedFour = unpackGameCode(3);
-        System.out.println(codedOne);
-
-        tryOne = unpackComputerTry(0);
-        tryTwo = unpackComputerTry(1);
-        tryThree = unpackComputerTry(2);
-        tryFour = unpackComputerTry(3);
-        System.out.println(tryOne);
-
-    }
-
-    private int unpackGameCode(int i) {
-
-        int n;
-        n = gameCode.get(i);
-
-        return n;
-    }
-
-    private int unpackComputerTry(int i) {
-
-        int m;
-        m = computerTry.get(i);
-
-        return m;
-
-    }
-
+    /**
+     * The method checks if the colors of the player's code match the computer's code
+     * @param computerTry - one table with four elements.
+     * @return colorCounter - number of matching numbers in the array and key.
+     */
     public int checkingColors(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
         colorCounter = 0;
@@ -73,10 +31,14 @@ public class CheckingClass {
             }
         }
 
-      //  System.out.println("Same colors: " + colorCounter);
         return colorCounter;
     }
 
+    /**
+     * The method checks if the position of the player's code match the computer's code
+     * @param computerTry one table with four elements.
+     * @return - number of matching numbers in the array and key.
+     */
 
     public int checkingPositions(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
@@ -87,43 +49,38 @@ public class CheckingClass {
             if (gameCode.get(i) == computerTry.get(i)) {
                 positionCounter++;
             }
-
         }
-       // System.out.println("Same positions: " + positionCounter);
         return positionCounter;
     }
 
-
-
-
-
+    /**
+     * The method returns last number of matching colors.
+     * @return colorCounter - number of matching numbers in the array and key.
+     */
     public int getColorCounter() {
         return colorCounter;
     }
-
+    /**
+     * The method returns last number of matching positions.
+     * @return positionCounter - number of matching numbers in the array and key.
+     */
     public int getPositionCounter() {
         return positionCounter;
     }
 
-    public void setColorCounter(int colorCounter) {
-        this.colorCounter = colorCounter;
-    }
-
-    public void setPositionCounter(int positionCounter) {
-        this.positionCounter = positionCounter;
-    }
-
-    public ArrayList<Integer> getGameCode() {
-        return gameCode;
-    }
-
+    /**
+     * The method sets gameCode coded by player.
+     * @param gameCode - lists of numbers coded by player.
+     */
     public void setGameCode(ArrayList<Integer> gameCode) {
         this.gameCode = gameCode;
     }
-
+    /**
+     * The method sets computerTry drawn by computer.
+     * @param computerTry - lists of numbers drawn by computer.
+     */
     public void setComputerTry(ArrayList<Integer> computerTry) {
         this.computerTry = computerTry;
-
     }
 
     public void checkingListener(){
@@ -131,6 +88,10 @@ public class CheckingClass {
         checkingPositions(computerTry);
     }
 
+    /**
+     *
+     * @return computerTry - lists of last numbers drawn by computer.
+     */
     public ArrayList<Integer> getComputerTry() {
         return computerTry;
     }

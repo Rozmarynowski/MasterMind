@@ -6,6 +6,11 @@ public class CodeChooser {
     private String color;
     Colors colors;
 
+    /**
+     * The method sets the color corresponding to the number of clicked button.
+     * @param click - number from 1 to 6 depends on how many times button was clicked.
+     * @return color.
+     */
     public String setColor(int click){
         this.click = click;
 
@@ -29,6 +34,11 @@ public class CodeChooser {
             return color;
     }
 
+    /**
+     * The method resets the counter if it is greater than 6.
+     * @param clickCode - how many times button was clicked.
+     * @return zeroed counter
+     */
     public static int searchClick(int clickCode){
 
         if(clickCode >=6){ clickCode = 0;}
